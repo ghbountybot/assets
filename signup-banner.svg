@@ -1,11 +1,30 @@
 <svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background with gradient -->
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .background-gradient stop:first-child { stop-color: #2D3748; }
+      .background-gradient stop:last-child { stop-color: #1A202C; }
+      .main-text { fill: #FFFFFF; }
+      .sub-text { fill: #A0AEC0; }
+      .button { fill: #4299E1; }
+      .button-text { fill: #FFFFFF; }
+      .decorative-circle { fill: #4299E1; }
+    }
+    @media (prefers-color-scheme: light) {
+      .background-gradient stop:first-child { stop-color: #EDF2F7; }
+      .background-gradient stop:last-child { stop-color: #E2E8F0; }
+      .main-text { fill: #2D3748; }
+      .sub-text { fill: #4A5568; }
+      .button { fill: #3182CE; }
+      .button-text { fill: #FFFFFF; }
+      .decorative-circle { fill: #3182CE; }
+    }
+  </style>
+  
   <defs>
-    <linearGradient id="bg-gradient" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" style="stop-color:#2D3748" />
-      <stop offset="100%" style="stop-color:#1A202C" />
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="1" y2="1" class="background-gradient">
+      <stop offset="0%"/>
+      <stop offset="100%"/>
     </linearGradient>
-    <!-- Glow effect -->
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
       <feMerge>
@@ -17,26 +36,28 @@
 
   <!-- Main container with rounded corners -->
   <rect x="0" y="0" width="600" height="160" rx="12" fill="url(#bg-gradient)"/>
-
+  
   <!-- Decorative elements -->
-  <circle cx="40" cy="40" r="20" fill="#4299E1" opacity="0.1"/>
-  <circle cx="560" cy="120" r="30" fill="#4299E1" opacity="0.1"/>
-
+  <circle cx="40" cy="40" r="20" class="decorative-circle" opacity="0.1"/>
+  <circle cx="560" cy="120" r="30" class="decorative-circle" opacity="0.1"/>
+  
   <!-- Main text -->
-  <text x="40" y="60" fill="#FFFFFF" font-family="system-ui, -apple-system" font-size="24" font-weight="bold">
+  <text x="40" y="60" font-family="system-ui, -apple-system" font-size="24" 
+        font-weight="bold" class="main-text">
     Want to add your own bounty?
   </text>
-
+  
   <!-- Subtext -->
-  <text x="40" y="90" fill="#A0AEC0" font-family="system-ui, -apple-system" font-size="16">
+  <text x="40" y="90" font-family="system-ui, -apple-system" font-size="16" 
+        class="sub-text">
     🍵 Help developers get their next cup of tea while improving open source
   </text>
-
+  
   <!-- CTA Button -->
   <g transform="translate(40, 110)">
-    <rect x="0" y="0" width="120" height="36" rx="18" fill="#4299E1" filter="url(#glow)"/>
-    <text x="60" y="24" fill="#FFFFFF" font-family="system-ui, -apple-system" font-size="14" 
-          font-weight="bold" text-anchor="middle">
+    <rect x="0" y="0" width="120" height="36" rx="18" class="button" filter="url(#glow)"/>
+    <text x="60" y="24" font-family="system-ui, -apple-system" font-size="14" 
+          font-weight="bold" text-anchor="middle" class="button-text">
       Fund here
     </text>
   </g>
